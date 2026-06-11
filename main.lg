@@ -1,5 +1,6 @@
 (ns projectname.main
   (:require [clojure.string :as str]
+            [tiny-cli.core :as cli]
             [projectname.core :as c]))
 
 (def app
@@ -18,15 +19,10 @@
     (vec (rest argv))))
 
 (defn- cli-argv [argv]
-  (args/strip-runner-args argv (not (str/blank? (os/getenv "LGX_RUN")))))
-
-; Top-level forms run during AOT compilation too. Guard so `lg -b` doesn't
-; execute the CLI while bundling.
-(when-not *compiling-aot*
-  (main))
+  (strip-runner-args argv (not (str/blank? (os/getenv "LGX_RUN")))))
 
 (defn- main []
-  (cli/run! app argv))
+  (cli/run! app (cli-argv os/args)))
 
 ; Top-level forms run during AOT compilation too. Guard so `lg -b` doesn't
 ; execute the CLI while bundling.

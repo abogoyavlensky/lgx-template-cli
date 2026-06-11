@@ -1,5 +1,7 @@
 (ns projectname.core)
 
 (defn greet
-  []
-  "Welcome to the projectname app!")
+  [_ctx]
+  (let [msg "Welcome to the projectname app!"]
+    (println msg)
+    msg))
