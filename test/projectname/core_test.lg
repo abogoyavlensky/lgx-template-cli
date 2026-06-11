@@ -3,4 +3,4 @@
             [projectname.core :as c]))
 
 (deftest test-greet-ok
-  (is (= "Welcome to the projectname app!" (c/greet))))
+  (is (= "Welcome to the projectname app!" (c/greet {}))))
