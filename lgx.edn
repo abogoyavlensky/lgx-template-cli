@@ -1,7 +1,7 @@
 {:paths ["src"]
  :main "main.lg"
  :targets {:bin {:out "bin/projectname"}}
- :deps {tiny-cli {:git/url "https://github.com/abogoyavlensky/tiny-cli"
-                  :git/tag "v0.1.0-rc2"}}
- :tasks {:fmt {:doc "Format source files"
-               :do [{:sh "cljfmt fix"}]}}}
+ :deps {abogoyavlensky/tiny-cli {:git/url "https://github.com/abogoyavlensky/tiny-cli"
+                                 :git/tag "v0.1.0-rc2"}}
+ :tasks {fmt {:doc "Format source files"
+              :do [{:sh "cljfmt fix"}]}}}
