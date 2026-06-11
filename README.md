@@ -1,6 +1,6 @@
 # projectname
 
-A basic CLI let-go application.
+A basic let-go CLI application template.
 
 ## Development
 
