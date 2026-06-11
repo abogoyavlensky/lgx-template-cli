@@ -1,0 +1,34 @@
+(ns projectname.main
+  (:require [clojure.string :as str]
+            [projectname.core :as c]))
+
+(def app
+  {:name "projectname"
+   :version "0.1.0"
+   :doc "Small git worktree helper."
+   :commands [{:name "greet"
+               :doc "Greet the user."
+               :run c/greet}]})
+
+; TOOD: move to *command-line-args*!
+(defn strip-runner-args
+  [argv lgx-run?]
+  (if (and lgx-run? (some #(= % "--") argv))
+    (vec (rest (drop-while #(not (= % "--")) argv)))
+    (vec (rest argv))))
+
+(defn- cli-argv [argv]
+  (args/strip-runner-args argv (not (str/blank? (os/getenv "LGX_RUN")))))
+
+; Top-level forms run during AOT compilation too. Guard so `lg -b` doesn't
+; execute the CLI while bundling.
+(when-not *compiling-aot*
+  (main))
+
+(defn- main []
+  (cli/run! app argv))
+
+; Top-level forms run during AOT compilation too. Guard so `lg -b` doesn't
+; execute the CLI while bundling.
+(when-not *compiling-aot*
+  (main))
