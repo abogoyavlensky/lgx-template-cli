@@ -1,7 +1,7 @@
 (ns projectname.main
   (:require [clojure.string :as str]
-            [tiny-cli.core :as cli]
-            [projectname.core :as c]))
+            [projectname.core :as c]
+            [tiny-cli.core :as cli]))
 
 (def app
   {:name "projectname"
