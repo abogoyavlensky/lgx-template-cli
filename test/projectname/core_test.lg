@@ -1,5 +1,5 @@
 (ns projectname.core-test
-  (:require [clojure.test :refer :all]
+  (:require [clojure.test :refer [deftest is]]
             [projectname.core :as c]))
 
 (deftest test-greet-ok

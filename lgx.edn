@@ -4,4 +4,6 @@
  :deps {abogoyavlensky/tiny-cli {:git/url "https://github.com/abogoyavlensky/tiny-cli"
                                  :git/tag "v0.1.0-rc2"}}
  :tasks {fmt {:doc "Format source files"
-              :do [{:sh "cljfmt fix"}]}}}
+              :do [{:sh "cljfmt fix"}]}
+         lint {:doc "Lint source files"
+               :do [{:sh "find src test -type f -name '*.lg' -print0 | xargs -0 clj-kondo --lint"}]}}}

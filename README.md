@@ -18,6 +18,7 @@ lgx run -- help
 lgx run -- greet
 lgx test
 lgx fmt
+lgx lint
 lgx nrepl
 ```
 
