@@ -27,7 +27,7 @@ Buld a binary and use it:
 ```bash
 lgx build
 bin/projectname --help
-bin/project --version
-bin/project help greet
-bin/project greet
+bin/projectname --version
+bin/projectname help greet
+bin/projectname greet
 ```
