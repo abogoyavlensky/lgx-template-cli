@@ -12,6 +12,6 @@ cljfmt = "github:weavejester/cljfmt"
 
 [settings]
 # mise can't verify lg 1.11.0+ GitHub attestations: GitHub rotated its TSA cert
-# (late June 2026) and mise's bundled trusted root predates it. Checksum + SLSA
-# still run. Drop when a newer mise ships the new TSA.
+# and mise's bundled trusted root predates it. Checksum + SLSA still run. 
+# Drop when a newer mise ships the new TSA.
 github_attestations = false
