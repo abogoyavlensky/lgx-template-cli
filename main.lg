@@ -5,7 +5,7 @@
 (def app
   {:name "projectname"
    :version "0.1.0"
-   :doc "Small git worktree helper."
+   :doc "An example command-line application."
    :commands [{:name "greet"
                :doc "Greet the user."
                :run c/greet}]})
